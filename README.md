@@ -63,3 +63,7 @@ A aplicação estará disponível em http://localhost:5173.
 - Salvar cidades para receber alertas meteorológicos
 - Histórico de alertas para cada cidade salva
 - Interface intuitiva e responsiva
+
+---
+
+## Imagens
