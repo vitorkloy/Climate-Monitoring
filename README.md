@@ -18,7 +18,7 @@ Para rodar o projeto localmente, siga os passos abaixo:
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/vitorkloy/climate-monitoring.git
+git clone https://github.com/vitorkloy/Climate-Monitoring
 ```
 
 ### 2. Navegue até o diretório do projeto
