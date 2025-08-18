@@ -1,4 +1,4 @@
-// frontend/src/types/WeatherDatas.ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface WeatherData {
   name: string;
   main: {

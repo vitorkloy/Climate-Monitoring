@@ -1,8 +1,8 @@
-// frontend/src/pages/Auth/SignIn.tsx
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthService } from '../../services/authService';
-import '../../App.css'; // Importe o CSS global
+import '../../App.css';
 
 function SignIn() {
   const [email, setEmail] = useState('');
@@ -17,7 +17,7 @@ function SignIn() {
     setError(null);
     try {
       await AuthService.login(email, password);
-      navigate('/home'); // Redireciona para a página inicial após o login
+      navigate('/home'); 
     } catch (err: any) {
       setError(err.message || 'Erro ao fazer login.');
     } finally {
@@ -57,12 +57,9 @@ function SignIn() {
           </button>
         </form>
         <div className="toggle-auth-mode">
-          <p>
-            Não tem uma conta?{' '}
-            <button onClick={() => navigate('/signup')}>
-              Registre-se
-            </button>
-          </p>
+          <button onClick={() => navigate('/signup')}>
+            Não tem uma conta? Registre-se
+          </button>
         </div>
       </div>
     </div>

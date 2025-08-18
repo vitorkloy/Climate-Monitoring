@@ -1,4 +1,4 @@
-// frontend/src/services/authService.ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 import type { UserData } from '../types/WeatherDatas';
 

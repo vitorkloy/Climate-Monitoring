@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthService } from '../../services/authService';
-import '../../App.css'; // Importe o CSS global
-// import '../../components/AuthForm/AuthForm.css'; // Não é mais necessário se os estilos estiverem em App.css
+import '../../App.css';
 
 function SignUp() {
   const [name, setName] = useState('');
@@ -67,13 +67,10 @@ function SignUp() {
             {loading ? 'Registrando...' : 'Registrar'}
           </button>
         </form>
-        <div className="toggle-auth-mode">
-          <p>
-            Já tem uma conta?{' '}
-            <button onClick={() => navigate('/')}>
-              Login
-            </button>
-          </p>
+        <div className="toggle-auth-mode">          
+          <button onClick={() => navigate('/')}>
+            Já tem uma conta? Login
+          </button>
         </div>
       </div>
     </div>

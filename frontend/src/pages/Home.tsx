@@ -67,7 +67,7 @@ function Home() {
     const city = inputRef.current?.value;
     if (!city) return;
 
-    const key = "a23eca6824140447a7bc8a3fb2139eb6"; // Sua chave da API OpenWeatherMap
+    const key = "a23eca6824140447a7bc8a3fb2139eb6";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&lang=pt_br&units=metric`;
     const urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&lang=pt_br&units=metric`;
 
