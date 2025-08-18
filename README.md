@@ -8,7 +8,7 @@ Climate Monitoring é uma aplicação web desenvolvida para monitorar as condiç
 
 - **Frontend**: React, TypeScript, Vite  
 - **Backend**: Node.js, Express, Mongoose  
-- **Banco de Dados**: MongoDB  A
+- **Banco de Dados**: MongoDB  
 
 ---
 
@@ -23,7 +23,7 @@ git clone https://github.com/vitorkloy/Climate-Monitoring
 
 ### 2. Navegue até o diretório do projeto
 ```bash
-cd climate-monitoring
+cd Climate-Monitoring
 ```
 
 ### 3. Instale as dependências do Backend
@@ -43,7 +43,7 @@ npm start
 
 ### 6. Instale as dependências do Frontend
 ```bash
-cd ../frontend
+cd frontend
 npm install
 ```
 
@@ -61,7 +61,7 @@ A aplicação estará disponível em http://localhost:5173.
 - Cadastro e login de usuários
 - Monitoramento em tempo real do clima via API
 - Salvar cidades para verificar os dados meteorológicos
-- Histórico de alertas para cada cidade salva
+- Histórico para cada cidade salva
 - Interface intuitiva e responsiva
 
 ---
