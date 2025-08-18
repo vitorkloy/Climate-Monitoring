@@ -1,0 +1,37 @@
+.forecast-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--bg);
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 1rem;
+}
+
+.forecast-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.forecast-item:last-child {
+  border-bottom: none;
+}
+
+.forecast-date {
+  flex: 1;
+  font-weight: 500;
+}
+
+.forecast-item img {
+  width: 32px;
+  height: 32px;
+}
+
+.forecast-temp {
+  flex: 1;
+  text-align: right;
+  font-weight: bold;
+}

@@ -1,0 +1,246 @@
+/* Existing styles from your App.css */
+.container {
+  max-width: 1000px;
+  padding: 20px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+input {
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 15px;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  width: 60%;
+  max-width: 910px;
+  outline: none;
+  margin-top: 30px;
+}
+
+input::placeholder {
+  color: var(--muted);
+}
+
+button {
+  cursor: pointer;
+  border-color: transparent;
+  background-color: var(--search-color);
+  border: none;
+  padding: 15px;
+  border-radius: 0 20px 20px 0;
+  font-weight: bold;
+  color: #fff;
+  outline: none;
+}
+
+button:hover {
+  background-color: var(--hover);
+}
+
+/* New styles for saved cities and alerts history */
+.saved-cities-section {
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.saved-cities-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.city-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.city-list li {
+  background-color: var(--search-color);
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: var(--text);
+}
+
+.city-list li:hover {
+  background-color: var(--hover);
+}
+
+.city-list li.selected-city {
+  background-color: #007bff; /* Cor de destaque para a cidade selecionada */
+  color: #fff;
+  font-weight: bold;
+}
+
+.city-alerts-history {
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.city-alerts-history h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.alerts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.alert-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--search-color);
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  color: var(--text);
+  flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+}
+
+.alert-item span {
+  margin-right: 15px;
+}
+
+.alert-item span:last-child {
+  margin-right: 0;
+}
+
+/* NEW STYLES FOR AUTH AND LOGOUT */
+.user-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.logout-button {
+  background-color: #dc3545; /* Cor de perigo */
+  border-radius: 8px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+.auth-form-container {
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.auth-form-container h2 {
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 25px;
+}
+
+.auth-form-container .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.auth-form-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.auth-form-container input[type="email"],
+.auth-form-container input[type="password"],
+.auth-form-container input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background-color: var(--search-color);
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.auth-form-container input[type="email"]:focus,
+.auth-form-container input[type="password"]:focus,
+.auth-form-container input[type="text"]:focus {
+  border-color: #007bff; /* Cor de destaque no foco */
+}
+
+.auth-form-container button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #007bff; /* Cor primária */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.auth-form-container button:hover:not(:disabled) {
+  background-color: #0056b3; /* Tom mais escuro no hover */
+}
+
+.auth-form-container button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.auth-form-container .error-message {
+  color: #dc3545; /* Cor de erro */
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.toggle-auth-mode {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.toggle-auth-mode button {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  margin-left: 5px;
+  font-weight: 600;
+}
+
+.toggle-auth-mode button:hover {
+  text-decoration: underline;
+}
