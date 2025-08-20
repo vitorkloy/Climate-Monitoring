@@ -71,7 +71,6 @@ export const AuthService = {
       const response = await axios.get<UserData>(
         `${API_BASE_URL}/users/${userId}`
       );
-      console.log("Usuário atual carregado:", response.data);
       return response.data;
     } catch (error) {
       console.error("Erro ao carregar usuário atual:", error);

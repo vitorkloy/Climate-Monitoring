@@ -24,9 +24,21 @@ function Home2() {
   const [savedCities, setSavedCities] = useState<LocalidadeData[]>([]);
   const [selectedCityId, setSelectedCityId] = useState<string | null>(null);
   const [cityAlerts, setCityAlerts] = useState<AlertaData[]>([]);
+  const [cidades, setCidades] = useState<string[]>([]);
+  const [busca, setBusca] = useState<string>("");
 
   const navigate = useNavigate();
   const API_BASE_URL = "http://localhost:3333/api";
+
+  const getAllCities = useCallback(() => {
+    fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/distritos/`)
+      .then((response) => response.json())
+      .then((data) => {
+        const nomes = data.map((cidade) => cidade.municipio.nome);
+
+        setCidades(nomes);
+      });
+  }, []);
 
   const loadUser = useCallback(async () => {
     const user = await AuthService.getCurrentUser();
@@ -59,7 +71,13 @@ function Home2() {
       }
     }
     fetchCityAlerts();
-  }, [selectedCityId]);
+
+    getAllCities();
+  }, [selectedCityId, getAllCities]);
+
+  const handleFocusBusca = () => {
+    console.log("busca");
+  };
 
   async function searchCity() {
     const city = inputRef.current?.value;
@@ -141,6 +159,12 @@ function Home2() {
     }
   }
 
+  const cidadesFiltradas = busca
+    ? cidades
+        .filter((cidade) => cidade.toLowerCase().includes(busca.toLowerCase()))
+        .slice(0, 3)
+    : [];
+
   if (!currentUser) {
     return <p>Carregando usuário...</p>;
   }
@@ -153,11 +177,35 @@ function Home2() {
           Bem-vindo, <b>{currentUser.nome}!</b>
         </p>
         <div className="search-bar">
-          <input ref={inputRef} type="text" placeholder="Digite sua cidade" />
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder="Digite sua cidade"
+            onChange={(e) => setBusca(e.target.value)}
+            value={busca}
+            onFocus={() => handleFocusBusca()}
+          />
           <button type="button" onClick={searchCity}>
             Buscar
           </button>
         </div>
+        {cidadesFiltradas.length > 0 && (
+          <ul style={{ border: "1px solid #ccc", margin: 0, padding: "8px" }}>
+            {cidadesFiltradas.map((cidade, index) => (
+              <li
+                key={index}
+                style={{
+                  listStyle: "none",
+                  padding: "4px",
+                  cursor: "pointer",
+                }}
+                onClick={() => setBusca(cidade)}
+              >
+                {cidade}
+              </li>
+            ))}
+          </ul>
+        )}
       </header>
 
       <div className="content">
