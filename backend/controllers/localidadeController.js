@@ -9,12 +9,10 @@ export const createLocalidade = async (req, res) => {
       usuario,
     });
     if (existingLocalidade) {
-      return res
-        .status(409)
-        .json({
-          message: "Localidade já adicionada por este usuário.",
-          localidade: existingLocalidade,
-        });
+      return res.status(409).json({
+        message: "Localidade já adicionada por este usuário.",
+        localidade: existingLocalidade,
+      });
     }
 
     const localidade = await Localidade.create({ nome, estado, pais, usuario });

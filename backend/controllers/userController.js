@@ -1,6 +1,6 @@
 import User from "../models/User.js";
 import Localidade from "../models/Localidade.js";
-import bcrypt from "bcryptjs";
+import bcrypt, { hash } from "bcryptjs";
 
 export const createUser = async (req, res) => {
   const { nome, email, senha } = req.body;
@@ -37,7 +37,7 @@ export const getUser = async (req, res) => {
 export const loginUser = async (req, res) => {
   const { email, senha } = req.body;
   try {
-    const user = await User.findOne({ email }).select('+senha');
+    const user = await User.findOne({ email }).select("+senha");
     if (!user) {
       return res.status(400).json({ message: "Credenciais inválidas." });
     }
@@ -58,5 +58,37 @@ export const loginUser = async (req, res) => {
     res.status(200).json(userWithoutPassword);
   } catch (error) {
     res.status(500).json({ message: error.message });
+  }
+};
+
+export const updateUser = async (req, res) => {
+  const { nome, email, senha } = req.body;
+
+  const { id } = req.params;
+
+  try {
+    var updatedUser = {};
+    if (!senha) {
+      updatedUser = await User.findByIdAndUpdate(
+        id,
+        { nome, email },
+        { new: true, runValidators: true }
+      );
+    } else {
+      const hashedPassword = await bcrypt.hash(senha, 10);
+      updatedUser = await User.findByIdAndUpdate(
+        id,
+        { nome, email, senha: hashedPassword },
+        { new: true, runValidators: true }
+      );
+    }
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "Usuário não encontrado." });
+    }
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
   }
 };
