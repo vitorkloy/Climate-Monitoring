@@ -34,7 +34,9 @@ function Home2() {
     fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/distritos/`)
       .then((response) => response.json())
       .then((data) => {
-        const nomes = data.map((cidade) => cidade.municipio.nome);
+        const nomes = data.map(
+          (cidade: { municipio: { nome: any } }) => cidade.municipio.nome
+        );
 
         setCidades(nomes);
       });
