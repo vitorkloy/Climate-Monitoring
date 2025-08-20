@@ -6,6 +6,8 @@
   --muted: #a9b3c1;
   --search-color: rgba(0, 0, 0, .2);
   --hover: rgba(0, 0, 0, .1);
+  --line: #2a323c;
+  --accent: #007bff;
 }
 
 * {

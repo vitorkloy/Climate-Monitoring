@@ -1,6 +1,10 @@
 import { JSX, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import "./index.css";
 import { AuthService } from "./services/authService";
 
@@ -8,6 +12,8 @@ import { AuthService } from "./services/authService";
 import SignIn from "./pages/Auth/SignIn";
 import SignUp from "./pages/Auth/SignUp";
 import Home from "./pages/Home";
+import Account from "./pages/Account";
+import Home2 from "./pages/Home2";
 
 // Componente de rota protegida
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
@@ -32,7 +38,15 @@ const router = createBrowserRouter([
     path: "/home",
     element: (
       <ProtectedRoute>
-        <Home />
+        <Home2 />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/account",
+    element: (
+      <ProtectedRoute>
+        <Account />
       </ProtectedRoute>
     ),
   },

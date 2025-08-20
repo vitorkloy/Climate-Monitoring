@@ -1,0 +1,133 @@
+App.css
+:root {
+  --bg: #0b1e3d;
+  --search-color: #1b2d4f;
+  --hover: #27406b;
+  --text: #fff;
+  --muted: #aaa;
+}
+
+/* Layout principal */
+.home-container {
+  background-color: var(--bg);
+  min-height: 100vh;
+  color: var(--text);
+  padding: 20px;
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.home-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  background-color: var(--search-color);
+  color: var(--text);
+  outline: none;
+}
+
+.search-bar button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+/* Área de conteúdo */
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: var(--search-color);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.sidebar h3 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.city-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.city-list li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--bg);
+  transition: background-color 0.3s;
+}
+
+.city-list li:hover {
+  background-color: var(--hover);
+}
+
+.city-list li.selected-city {
+  background-color: #007bff;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Conteúdo principal */
+.main-content {
+  flex: 1;
+  background-color: var(--search-color);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Histórico de alertas */
+.city-alerts-history {
+  margin-top: 20px;
+}
+
+.city-alerts-history h3 {
+  margin-bottom: 15px;
+}
+
+.alerts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.alert-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background-color: var(--bg);
+}

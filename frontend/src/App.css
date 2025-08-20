@@ -10,6 +10,7 @@ h1 {
   color: #fff;
 }
 
+
 input {
   background-color: var(--bg);
   color: var(--text);
@@ -20,6 +21,10 @@ input {
   max-width: 910px;
   outline: none;
   margin-top: 30px;
+}
+
+input:disabled {
+  cursor: not-allowed;
 }
 
 input::placeholder {
@@ -132,18 +137,6 @@ button:hover {
   font-size: 1.1rem;
 }
 
-.logout-button {
-  background-color: #dc3545; 
-  border-radius: 8px;
-  padding: 8px 15px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
-}
-
-.logout-button:hover {
-  background-color: #c82333;
-}
 
 .auth-form-container {
   background-color: var(--bg);
@@ -237,4 +230,110 @@ button:hover {
 
 .toggle-auth-mode button:hover {
   text-decoration: underline;
+}
+
+.field { display: block; color:var(--text); }
+.field-label { display: block; margin-bottom:8px; opacity:.75; }
+
+.field-row{
+  display:grid;
+  grid-template-columns: 1fr 56px;
+  gap:12px;
+  align-items:stretch;
+}
+
+.field-row input{
+  height:56px;
+  width:100%;
+  padding:0 18px;
+  font-size:20px;
+  color:var(--text);
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:14px;
+  outline:none;
+  transition:border-color .15s, box-shadow .15s;
+}
+
+.field-row input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.icon-btn{
+  width:56px;
+  height:56px;
+  border:none;
+  border-radius:14px;
+  background:var(--accent);
+  color:white;
+  display:grid;
+  place-items:center;
+  padding:0;
+  cursor:pointer;
+
+}
+
+.account-form-container {
+  background-color: var(--bg);
+  border-radius: 10px;
+  padding: 30px 30px 0px 30px;
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logout-button {
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #dc3545; 
+  border-radius: 8px;
+  height: 3rem;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+.save-account-btn {
+  cursor: pointer;
+  margin-top: 50px;
+  background-color: #28a745; 
+  border-radius: 8px;
+  width: 100%;
+  height: 3rem;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button-account {
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #dc3545; 
+  border-radius: 8px;
+  width: 100%;
+  height: 3rem;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button-account:hover {
+  background-color: #c82333;
+}
+
+.logout-button-account:disabled {
+  background-color: #cccccc; 
+  cursor: not-allowed;
+}
+
+.user-info {
+  cursor: pointer;
 }
