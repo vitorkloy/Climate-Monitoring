@@ -1,4 +1,5 @@
-import { JSX, StrictMode } from "react";
+/* eslint-disable react-refresh/only-export-components */
+import { type JSX, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import {
   createBrowserRouter,
@@ -13,7 +14,6 @@ import SignIn from "./pages/Auth/SignIn";
 import SignUp from "./pages/Auth/SignUp";
 import Home from "./pages/Home";
 import Account from "./pages/Account";
-import Home2 from "./pages/Home2";
 
 // Componente de rota protegida
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     path: "/home",
     element: (
       <ProtectedRoute>
-        <Home2 />
+        <Home />
       </ProtectedRoute>
     ),
   },

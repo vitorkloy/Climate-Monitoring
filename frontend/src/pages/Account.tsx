@@ -1,4 +1,4 @@
-import "../App.css";
+import "./Account.css";
 import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthService } from "../services/authService";
@@ -71,10 +71,13 @@ function Account() {
   }
 
   return (
-    <div className="container">
+    <div className="account-container">
       <h1>Monitoramento Climático</h1>
+
       <div className="account-form-container">
-        <h2>Bem vindo, {currentUser.nome}</h2>
+        <h2>Bem-vindo, {currentUser.nome}</h2>
+
+        {/* Usuário */}
         <label htmlFor="username">Usuário:</label>
         <div className="field-row">
           {editing ? (
@@ -95,28 +98,21 @@ function Account() {
           <button
             className="icon-btn"
             type="button"
-            aria-label="Editar"
+            aria-label="Editar usuário"
             onClick={() => setEditing(true)}
           >
-            <svg
-              viewBox="0 0 24 24"
-              width="20"
-              height="20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm14.71-9.04c.39-.39.39-1.02 0-1.41l-1.51-1.51a1 1 0 0 0-1.41 0l-1.13 1.13 3.75 3.75 1.3-1.96z" />
-            </svg>
+            ✏️
           </button>
         </div>
 
+        {/* Email */}
         <label htmlFor="email">Email:</label>
         <div className="field-row">
           {editing ? (
             <input
               id="email"
               type="email"
-              defaultValue={currentUser.nome}
+              defaultValue={currentUser.email}
               onChange={(e) => setUpdatedEmail(e.target.value)}
             />
           ) : (
@@ -125,21 +121,14 @@ function Account() {
           <button
             className="icon-btn"
             type="button"
-            aria-label="Editar"
+            aria-label="Editar email"
             onClick={() => setEditing(true)}
           >
-            <svg
-              viewBox="0 0 24 24"
-              width="20"
-              height="20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm14.71-9.04c.39-.39.39-1.02 0-1.41l-1.51-1.51a1 1 0 0 0-1.41 0l-1.13 1.13 3.75 3.75 1.3-1.96z" />
-            </svg>
+            ✏️
           </button>
         </div>
 
+        {/* Senha */}
         <label htmlFor="password">Senha:</label>
         <div className="field-row">
           <input
@@ -151,18 +140,23 @@ function Account() {
           />
         </div>
 
-        <button
-          onClick={handleSave}
-          className="save-account-btn"
-          disabled={!editing}
-        >
-          Salvar
-        </button>
-        <button onClick={handleLogout} className="logout-button-account">
-          Sair
-        </button>
+        {/* Botões */}
+        <div className="account-actions">
+          <button
+            onClick={handleSave}
+            className="save-account-btn"
+            disabled={!editing}
+          >
+            Salvar
+          </button>
+          <button onClick={handleLogout} className="logout-btn">
+            Sair
+          </button>
+          <button onClick={() => navigate("/home")} className="back-btn">
+            Voltar
+          </button>
+        </div>
       </div>
-      <button onClick={() => navigate("/home")}>Voltar</button>
     </div>
   );
 }

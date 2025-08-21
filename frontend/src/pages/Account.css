@@ -1,0 +1,126 @@
+/* Página de Conta */
+.account-container {
+  background-color: var(--bg);
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account-container h1 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.account-form-container {
+  background-color: var(--search-color);
+  padding: 30px;
+  border-radius: var(--radius);
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.account-form-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: bold;
+  color: var(--muted);
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field-row input {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--radius);
+  border: none;
+  outline: none;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.field-row input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.icon-btn {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.icon-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* Ações da conta */
+.account-actions {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.save-account-btn,
+.logout-btn,
+.back-btn {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.save-account-btn {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.save-account-btn:hover:enabled {
+  background-color: var(--primary-dark);
+}
+
+.save-account-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.logout-btn {
+  background-color: #c0392b;
+  color: #fff;
+}
+
+.logout-btn:hover {
+  background-color: #922b21;
+}
+
+.back-btn {
+  background-color: var(--hover);
+  color: #fff;
+}
+
+.back-btn:hover {
+  background-color: #1a2f55;
+}
