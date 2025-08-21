@@ -70,4 +70,6 @@ A aplicação estará disponível em http://localhost:5173.
 
 ![Interface do sistema, página de Login](https://github.com/vitorkloy/Climate-Monitoring/blob/main/images/SignIn.png)
 ![Interface do sistema, página de Cadastro](https://github.com/vitorkloy/Climate-Monitoring/blob/main/images/SignUp.png)
+![Interface do sistema, página de Cadastro](https://github.com/vitorkloy/Climate-Monitoring/blob/main/images/HomeInit.png)
 ![Interface do sistema, página principal do sistema](https://github.com/vitorkloy/Climate-Monitoring/blob/main/images/Home.png)
+![Interface do sistema, página principal do sistema](https://github.com/vitorkloy/Climate-Monitoring/blob/main/images/Account.png)
