@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import "../App.css";
+import "../styles/App.css";
 import WeatherInfo from "../components/WeatherInfo/WeatherInfo";
 import WeatherInfoForecast from "../components/WeatherInfoForecast/WeatherInfoForecast";
 import { useState, useRef, useEffect, useCallback } from "react";

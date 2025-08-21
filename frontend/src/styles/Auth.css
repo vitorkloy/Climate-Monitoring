@@ -1,0 +1,146 @@
+:root {
+  --bg: #0b1e3d;
+  --search-color: #1b2d4f;
+  --hover: #27406b;
+  --primary: #007bff;
+  --primary-dark: #0056b3;
+  --text: #ffffff;
+  --muted: #aaa;
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* Container principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* Título principal */
+.container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text);
+}
+
+/* Form container */
+.auth-form-container {
+  background-color: var(--search-color);
+  padding: 30px 40px;
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: var(--text);
+}
+
+/* Form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  color: #c0c0c0;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border-radius: var(--radius);
+  border: none;
+  outline: none;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  transition: all var(--transition);
+}
+
+.form-group input:focus {
+  box-shadow: 0 0 0 2px var(--primary);
+  background-color: var(--hover);
+}
+
+/* Botões */
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition);
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-dark);
+}
+
+button[type="submit"]:disabled {
+  background-color: #27406b;
+  cursor: not-allowed;
+}
+
+/* Mensagem de erro */
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Link para alternar entre login e cadastro */
+.toggle-auth-mode {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.toggle-auth-mode button {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all var(--transition);
+}
+
+.toggle-auth-mode button:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+  .auth-form-container {
+    padding: 20px;
+  }
+
+  .container h1 {
+    font-size: 2rem;
+  }
+
+  .auth-form-container h2 {
+    font-size: 1.5rem;
+  }
+}

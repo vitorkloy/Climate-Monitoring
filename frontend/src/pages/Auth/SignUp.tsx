@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthService } from '../../services/authService';
-import '../../App.css';
+import '../../styles/Auth.css';
 
 function SignUp() {
   const [name, setName] = useState('');
