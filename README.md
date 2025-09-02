@@ -1,6 +1,6 @@
 # Climate Monitoring
 
-Climate Monitoring é uma aplicação web desenvolvida para monitorar as condições climáticas em tempo real com base na localização do usuário. O projeto permite que os usuários se cadastrem, façam login e salvem cidades para receber alertas meteorológicos.
+Esta é uma aplicação web desenvolvida para monitorar as condições climáticas em tempo real com base na localização pesquisada pelo usuário. O projeto permite que os usuários se cadastrem, façam login e salvem cidades para receber alertas meteorológicos.
 
 ---
 
