@@ -62,7 +62,7 @@ A aplicação estará disponível em http://localhost:5173.
 - Monitoramento em tempo real do clima via API
 - Salvar cidades para verificar os dados meteorológicos
 - Histórico para cada cidade salva
-- Interface intuitiva e responsiva
+- Interface intuitiva e responsiva.
 
 ---
 
